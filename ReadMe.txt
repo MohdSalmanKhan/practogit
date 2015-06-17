@@ -10,7 +10,8 @@ Phase 1:-(installation)(For better understanding refer to http://blog.miguelgrin
 
 4.	Install virtual environment :- pip install virtualenv.	
 
-5.  For older versions of Python that have been expanded with virtualenv, the command that creates a virtual environment is:				virtualenv flask (i have done this)
+5.  For older versions of Python that have been expanded with virtualenv, the command that creates a virtual environment is:
+	virtualenv flask (i have done this)
 
 6. Now install :
 	flask/bin/pip install flask
@@ -34,8 +35,12 @@ Phase 1:-(installation)(For better understanding refer to http://blog.miguelgrin
 	mkdir app/templates
 	mkdir tmp
 
+
+8. run ./db_create.py ( if permission not set , set it by using chmod)
+9. run ./db_migrate.py ( if permission not set , set it by using chmod)
+
 Phase 2 (Running) :- 
-	1. Run this project by typing : ./run.py
+	1. Run this project by typing : ./run.py ( if permission not set , set it by using chmod)
 	2. For searching in app just type the url as : http://localhost:5000/ ( and give appropriate location and speciality) 
 	2. For getting in admin page u need to type : http://localhost:5000/adminIndex 
 	3. Now if u want to insert some doctor data then place the copy of image in static folder in app and in insert page just type the
