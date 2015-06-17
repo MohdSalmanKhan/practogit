@@ -1,0 +1,28 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+<div class='row'>
+    <div 'col-sm-4' align='center'>      
+    </div>
+</div>
+<div class="jumbotron max_height text-center white-color" style="font-size:40px;">
+  <label>Search</label>
+</div>
+<div class='container'>
+  <div class='jumbotron row blue-color' style="height=100px;">
+    <form action="/search" method="post" name="login">
+      <div class='col-sm-5' align="center">
+        <input type="text" aria-describedby="basic-addon1" class="form-control" placeholder="Location" id="{{ search.locality(size=60) }}
+      </div>
+      <div class='col-sm-5' align="center">
+        <input type="text" aria-describedby="basic-addon1" class="form-control" placeholder="Specialility, Doctors, Clinics, Labs, etc." id="{{search.speciality(size=60)}}
+      </div>
+      <div class='col-sm-2' align="left">
+        <p>
+          <input type="image" src="/static/search.jpg" alt="Submit" width="35" height="35">
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

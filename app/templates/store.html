@@ -1,0 +1,57 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+
+<style type="text/css">
+  #main{
+    background-color: grey ;
+    color: black;
+    text-align: center;
+    width: 70%;
+    margin-left: 20%;
+  }
+  #centre{
+    font-size: 25px;
+  }
+  #details{
+    margin-top: 5%;
+    font-size: 20px;
+  }
+
+</style>
+  
+<div id="main">
+  <div id="centre">Admin Panel</div>
+  <div id="details"> Enter Doctor Details:</div>
+  <form action="/store" method="post" name="store">
+    <p>
+      Name:{{ store.name(size=80) }}<br>
+    </p>
+
+    <p>
+      Location:{{ store.location(size=80) }}<br>
+    </p>
+
+    <p>
+      Degree:{{ store.degree(size=80) }}<br>
+    </p>
+    <p>
+      Speciality:{{ store.speciality(size=80) }}<br>
+    </p>
+    <p>
+      Experience:{{ store.experience(size=80) }}<br>
+    </p>
+    <p>
+      Address:{{ store.address(size=80) }}<br>
+    </p>
+    <p>
+      Email:{{ store.email(size=80) }}<br>
+    </p>
+    <p>
+      Image Name:{{ store.imagePath(size=80) }}<br>
+    </p>
+    <b>Location,Speciality and Address can be comma separated</b>
+    <p><input type="submit" value="Store"></p>
+  </form>
+</div>  
+{% endblock %}

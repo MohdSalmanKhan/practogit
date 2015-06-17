@@ -1,0 +1,44 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+<h1>Results:</h1>             
+  <ul class="pagination">
+    <li><a href="/search/0/{{ speciality_post }}/{{ locality_post }}">1</a></li>
+    <li><a href="/search/1/{{ speciality_post }}/{{ locality_post }}">2</a></li>
+    <li><a href="/search/2/{{ speciality_post }}/{{ locality_post }}">3</a></li>
+  </ul>
+</div>
+
+<div class='container'>
+{% if resultLength == 0 %}
+<div class='jumbotron'>
+  <label>No Data Found!</label>
+</div>
+{% endif %}
+{% for doctor in doctorList %}
+<div class='jumbotron row blue-color'>
+  <div class='col-xs-2'>
+    <img src={{doctor.imagePath}} alt="Doctor image" height="150px" width="150px">
+  </div>
+  <div class='col-xs-8'>
+	<div>
+	  <p>
+		<h3>{{ doctor.name }}</h3>
+		<strong>{{ doctor.speciality }}</strong> <br><br>
+		<span class='glyphicon glyphicon-comment'>  {{ doctor.email }}</span> <br>
+		<span class='glyphicon glyphicon-education'> {{ doctor.degree }}</span><br>
+		<span class='glyphicon glyphicon-star-empty'> {{ doctor.experience }} years</span> <br>
+		<span class='glyphicon glyphicon-envelope'> {{ doctor.address }}</span> <br>
+	  </p>
+	</div>
+  </div>
+  <div class='col-xs-2'>
+	<span class="glyphicon glyphicon-thumbs-up" style="font-weight: bold;"> 195 Recommendations</span><br><br><br>
+	<span class="glyphicon glyphicon-map-marker" style="font-weight: bold;"> {{ doctor.location }}</span>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

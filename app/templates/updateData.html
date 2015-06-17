@@ -1,0 +1,91 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+
+<style type="text/css">
+  #main{
+    background-color: grey ;
+    color: black;
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+  }
+  #centre{
+    font-size: 25px;
+  }
+  #details{
+    margin-top: 5%;
+    font-size: 20px;
+  }
+</style>
+
+<div class='container'>
+  <div class='row jumbotron'>
+    <div class='col-xs-4'>
+      Image : <img src={{doc.imagePath}} alt="Doctor image" height='100px' width='100px'><br>
+    </div>    
+    <div class='col-xs-4'>
+      Name : <b>{{ doc.name }}</b>  <br>
+      Degree : <b>{{ doc.degree }}</b><br>
+      Experience : <b>{{ doc.experience }}</b><br>
+      Email : <b>{{ doc.email }}</b><br>
+
+      location
+      {% for loc in doc.location %}
+        <div>
+          <b>{{ loc }}</b><br> 
+        </div>
+      {% endfor %}
+    </div>
+    <div class='col-xs-4'>
+      Address
+      {% for address in doc.address %}
+        <div>
+          <b>{{ address }}</b><br> 
+        </div>
+      {% endfor %}
+      speciality
+      {% for spec in doc.speciality %}
+        <div>
+          <b>{{ spec }}</b><br> 
+        </div>
+      {% endfor %}
+    </div>
+</div>
+<div id="main">
+  <div id="centre">
+    Admin Panel
+  </div>
+  <div id="details">
+    Enter Doctor Details:
+  </div>
+  <form action="/updateInDB" method="post" name="store">
+    <p>
+      Name:{{ store.name(size=80) }}<br>
+    </p>
+    <p>
+      Location:{{ store.location(size=80) }}<br>
+    </p>
+    <p>
+      Degree:{{ store.degree(size=80) }}<br>
+    </p>
+    <p>
+      Speciality:{{ store.speciality(size=80) }}<br>
+    </p>
+    <p>
+      Experience:{{ store.experience(size=80) }}<br>
+    </p>
+    <p>
+      Address:{{ store.address(size=80) }}<br>
+    </p>
+    <p>
+      Email:{{ store.email(size=80) }}<br>
+    </p>
+    <p>
+      Image Name:{{store.imagePath(size=80) }}<br>
+    </p>
+    <b>Location,Speciality and Address can be comma separated</b>
+    <p><input type="submit" value="Store"></p>
+  </form>
+</div>  
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+
+<div class='container'>
+<div class='row jumbotron'>
+<div class='col-xs-4'>
+    Image : <img src={{doc.imagePath}} alt="Doctor image" height='100px' width='100px'><br>
+</div>
+<div class='col-xs-4'>
+	Name : <b>{{ doc.name }}</b>  <br>
+	Degree : <b>{{ doc.degree }}</b><br>
+	Experience : <b>{{ doc.experience }}</b><br>
+	Email : <b>{{ doc.email }}</b><br>
+
+	Location
+	{% for loc in doc.location %}
+    	<div><b>{{ loc }}</b> <br> </div>
+    {% endfor %}
+</div>
+<div class='col-xs-4'>
+    Address
+    {% for address in doc.address %}
+    	<div><b>{{ address }}</b> <br> </div>
+    {% endfor %}
+
+
+    Speciality
+	{% for spec in doc.speciality %}
+    	<div><b>{{ spec }}</b> <br> </div>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock %}

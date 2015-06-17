@@ -1,0 +1,15 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+  <form method="POST" action="/getupdate" name="form">
+	<div>
+      <p>Email:{{ form.email(size=80) }}</p>
+    </div>
+    <div>
+      <button type="submit">Find</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

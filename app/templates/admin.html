@@ -1,0 +1,51 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<br>
+<div class='jumbotron row blue-color'>
+  <div class='container'>
+  <div class='jumbotron row'>
+    <form action="/deleteDoctor" method="POST">
+      <label>
+        Enter email Id to delete:
+      </label>
+      <input type='text' id={{ deleteForm.email }}
+      <input type='submit' alt="Submit" name='Delete'>
+    </form>
+  </div>
+  </div>
+  <div class='container'>
+  <div class='jumbotron row'>
+    <form action="/update" method="POST">
+      <label>
+        Click to update:
+      </label>
+      <input type='submit' alt="Submit" name='Delete'>
+    </form>
+  </div>
+  </div>
+  <div class='container'>
+  <div class='jumbotron row'>
+    <form action="/read" method="POST">
+      <label>
+        Click to read:
+      </label>
+      <input type='submit' alt="Submit" name='Delete'>
+    </form>
+  </div>
+  </div>
+  <div class='container'>
+  <div class='jumbotron row'>
+    <form action="/insert" method="POST">
+      <label>
+        Click to create:
+      </label>
+      <input type='submit' alt="Submit" name='Delete'>
+    </form>
+  </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {% if title %}
+    <title>{{ title }} - Practo</title>
+    {% else %}
+    <title>Practo</title>
+    {% endif %}
+    <style>
+      .max_height {
+        max-height: 5px;
+      }
+      .blue-color{
+        background: #B2F0FF;
+      }
+      .white-color{
+        background:#FFFFFF;
+      }
+      .search_result{
+        background:#B2F0FF;
+        max-height: 10px;
+        min-height: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  <span>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.practo.com/">
+        <img src="/static/practo.jpg" alt="Practo Logo" style="width:250px;height:100px;">
+      </a>
+      <a href="/">Search</a>
+    </div>
+  </span>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>
